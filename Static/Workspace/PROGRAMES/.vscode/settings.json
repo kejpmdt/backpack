@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.in": "plaintext",
+        "vector": "cpp",
+        "queue": "cpp",
+        "deque": "cpp"
+    }
+}

@@ -1,0 +1,86 @@
+#include <iostream>
+#include <cstdio>
+#include <set>
+using namespace std;
+template <class T>
+void read(T &ans)
+{
+   ans = 0;
+   char us = getchar();
+   bool f = false;
+   while (us < 48 || us > 57)
+   {
+      f |= (us == 45);
+      us = getchar();
+   }
+   while (us > 47 && us < 58)
+   {
+      ans = (ans << 1) + (ans << 3) + (us ^ 48);
+      us = getchar();
+   }
+   ans *= f ? -1 : 1;
+   return;
+}
+template <class T, class... O>
+void read(T &x, O &...oth)
+{
+   read(x);
+   read(oth...);
+}
+#define MAXN 500005
+#define MAXM 1000005
+int fst[MAXN], nt[MAXM];
+int to[MAXM];
+int zpld[MAXN], bigc[MAXN], depth[MAXN], fa[MAXN], dfsn[MAXN];
+int weight[MAXN];
+int data[MAXN];
+void addline(int a, int b)
+{
+   static int i = 0;
+   ++i;
+   to[i] = b;
+   nt[i] = fst[a];
+   fst[a] = i;
+   ++i;
+   to[i] = a;
+   nt[i] = fst[b];
+   fst[b] = i;
+}
+void dfs1(int nw, int f)
+{
+   fa[nw] = f;
+   depth[nw] = depth[f] + 1;
+   weight[nw] = 1;
+   int i;
+   if (to[fst[nw]] == f)
+   {
+      fst[nw] = nt[fst[nw]];
+   }
+   for (i = fst[nw]; i; i = nt[i])
+   {
+      if (to[nt[i]] == f)
+      {
+         nt[i] = nt[nt[i]];
+      }
+      dfs1(to[i], nw);
+      weight[nw] += weight[to[i]];
+      if (weight[to[i]] > weight[bigc[nw]])
+      {
+         bigc[nw] = to[i];
+      }
+   }
+}
+void dfs2(int nw, int ld)
+{
+   zpld[nw] = ld;
+   if (!bigc[nw])
+   {
+      return;
+   }
+   dfs2(
+       int main()
+   {
+      freopen("Wt.in", "r", stdin);
+      freopen("Wt.out", "w", stdout);
+      int n, m;
+      int a, b;

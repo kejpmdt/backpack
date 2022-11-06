@@ -1,0 +1,1 @@
+{"name":"Local: ans_n^2","url":"f:\\Static\\Workspace\\CODES\\Problems\\ZR\\NOIP\\day1\\T2\\ans_n^2.cpp","tests":[{"id":1663924223358,"input":"4 5\n1 2 0\n2 3 1\n3 4 1\n2 4 0\n1 3 1","output":"3 1 4 5 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Static\\Workspace\\CODES\\Problems\\ZR\\NOIP\\day1\\T2\\ans_n^2.cpp","group":"local","local":true}

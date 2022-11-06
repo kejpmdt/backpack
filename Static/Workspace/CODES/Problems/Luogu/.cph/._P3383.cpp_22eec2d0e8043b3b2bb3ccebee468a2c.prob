@@ -1,0 +1,1 @@
+{"name":"Local: _P3383","url":"f:\\VSUSE\\CODES\\Problems\\Luogu\\_P3383.cpp","tests":[{"id":1656934007083,"input":"100 5\n1\n2\n3\n4\n5","output":"2\n3\n5\n7\n11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\VSUSE\\CODES\\Problems\\Luogu\\_P3383.cpp","group":"local","local":true}

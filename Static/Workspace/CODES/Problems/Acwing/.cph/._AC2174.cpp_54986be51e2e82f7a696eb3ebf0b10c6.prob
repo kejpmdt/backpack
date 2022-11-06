@@ -1,0 +1,1 @@
+{"name":"Local: _AC2174","url":"f:\\VSUSE\\CODES\\Problems\\Acwing\\_AC2174.cpp","tests":[{"id":1656411240662,"input":"5 5 1 5\n1 4 10 5\n4 5 5 10\n4 2 12 5\n2 5 10 15\n1 5 10 10","output":"20 300"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\VSUSE\\CODES\\Problems\\Acwing\\_AC2174.cpp","group":"local","local":true}

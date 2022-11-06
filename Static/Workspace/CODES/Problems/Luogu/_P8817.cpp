@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>tos[2505];
+int dis[2505][2505];
+int v[2505];
+int n,k,m;
+void bfs(int st){
+    queue<int>q;
+    q.push(st);
+    int nw;
+    while(!q.empty()){
+        nw=q.front();
+        q.pop();
+        if(dis[st][nw]==k+1)continue;
+        for(auto i:tos[nw])
+            if(!dis[st][i]){
+                q.push(i);
+                dis[st][i]=dis[st][nw]+1;
+            }
+    }
+}
+void md(void){
+    for(int i=1;i<=n;++i)bfs(i),dis[i][i]=0;
+    for(int i=1;i<=n;++i){
+        tos[i].clear();
+        for(int j=1;j<=n;++j)if(dis[i][j])tos[i].push_back(j);
+    }
+}
+long long ans=0;
+bool pd[2505];
+void dfs(int nw){
+    static int t=0;
+    static long long f=0;
+    f+=v[nw];
+    ++t;
+    if(t==5){
+        if(dis[nw][1])ans=max(ans,f);
+        --t;
+        f-=v[nw];
+        return;
+    }
+    for(auto i:tos[nw])
+        if(!pd[i]){
+            pd[i]=true;
+            dfs(i);
+            pd[i]=false;
+        }
+    f-=v[nw];
+    --t;
+}
+int main(){
+    scanf("%d%d%d",&n,&m,&k);
+    for(int i=2;i<=n;++i)scanf("%d",&v[i]);
+    int u,r;
+    while(m--){
+        scanf("%d%d",&u,&r);
+        tos[u].push_back(r);
+        tos[r].push_back(u);
+    }
+    md();
+    dfs(1);
+    cout<<ans;
+    return 0;
+}
+
+
